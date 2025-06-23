@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+  background: #fff;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+h1 {
+  text-align: center;
+  color: #b30000;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+form input,
+form select,
+form button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #b30000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover:not(:disabled) {
+  background-color: #7f0000;
+}
+
+#search {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#dark-mode-toggle {
+  background-color: #444;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-top: -60px;
+  margin-right: 10px;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #222;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea,
+.dark-mode button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode table {
+  border-color: #555;
+}
+
+.dark-mode thead {
+  background-color: #550000;
+}
+
+.dark-mode .toast {
+  background-color: #660000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #b30000;
+  color: white;
+}
+
+th, td {
+  padding: 10px 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+}
+
+.status.In\ Stock {
+  background-color: #28a745;
+}
+
+.status.Low\ Stock {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.status.Ordered {
+  background-color: #17a2b8;
+}
+
+.status.Discontinued {
+  background-color: #6c757d;
+}
+
+.action-btn {
+  margin-right: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  background: none;
+}
+
+.action-btn:hover {
+  color: #b30000;
+}
+
+.action-btn.delete-btn {
+  color: #b30000;
+}
+
+/* Inventory Total Display */
+#inventory-total {
+  text-align: right;
+  margin-top: 10px;
+  color: #333;
+}
+
+.dark-mode #inventory-total {
+  color: #ccc;
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.toast {
+  background-color: #b30000;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.4s forwards, fadeOut 0.4s 3.6s forwards;
+  font-size: 14px;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
